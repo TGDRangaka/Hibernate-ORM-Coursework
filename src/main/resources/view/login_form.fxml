@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <Pane layoutX="20.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #cedce7 0%,#596a72 100%);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="91.0" layoutY="114.0" opacity="0.68" prefHeight="450.0" prefWidth="461.0" style="-fx-background-color: black; -fx-background-radius: 20%;">
+               <effect>
+                  <GaussianBlur radius="34.22" />
+               </effect>
+            </Pane>
+            <Pane layoutX="64.0" layoutY="100.0" prefHeight="450.0" prefWidth="475.0" style="-fx-background-color: white; -fx-background-radius: 20%;">
+               <children>
+                  <Label layoutX="53.0" layoutY="54.0" text="Wellcome Back!">
+                     <font>
+                        <Font name="System Bold" size="39.0" />
+                     </font>
+                  </Label>
+                  <JFXTextArea editable="false" focusColor="#405aa800" focusTraversable="false" layoutX="53.0" layoutY="121.0" prefHeight="69.0" prefWidth="336.0" text="To keep connected with us please login with your login informations." unFocusColor="#4d4d4d00">
+                     <cursor>
+                        <Cursor fx:constant="NONE" />
+                     </cursor>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextArea>
+                  <ImageView fitHeight="156.0" fitWidth="133.0" layoutX="155.0" layoutY="225.0">
+                     <image>
+                        <Image url="@../img/d24-high-resolution-logo-color-on-transparent-background.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="156.0" fitWidth="133.0" layoutX="162.0" layoutY="232.0" opacity="0.67">
+                     <image>
+                        <Image url="@../img/d24-high-resolution-logo-color-on-transparent-background.png" />
+                     </image>
+                     <effect>
+                        <GaussianBlur />
+                     </effect>
+                  </ImageView>
+                  <Pane layoutX="14.0" layoutY="103.0" prefHeight="88.0" prefWidth="392.0" />
+               </children></Pane>
+            <Pane layoutX="492.0" layoutY="63.0" opacity="0.55" prefHeight="550.0" prefWidth="550.0" style="-fx-background-color: black; -fx-border-color: black; -fx-border-radius: 19%; -fx-border-width: 6; -fx-background-radius: 20%;">
+               <effect>
+                  <GaussianBlur radius="32.56" />
+               </effect>
+            </Pane>
+            <Pane layoutX="479.0" layoutY="50.0" prefHeight="550.0" prefWidth="550.0" style="-fx-background-color: linear-gradient(to right, #ffc578 0%,#fb9d23 100%); -fx-border-color: white; -fx-border-radius: 19%; -fx-border-width: 6; -fx-background-radius: 20%;">
+               <children>
+                  <Label layoutX="225.0" layoutY="40.0" text="Login">
+                     <font>
+                        <Font name="System Bold" size="39.0" />
+                     </font>
+                  </Label>
+                  <JFXTextArea editable="false" focusColor="#405aa800" focusTraversable="false" layoutX="187.0" layoutY="96.0" prefHeight="53.0" prefWidth="177.0" text="Sign In your account" unFocusColor="#4d4d4d00">
+                     <cursor>
+                        <Cursor fx:constant="NONE" />
+                     </cursor>
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </JFXTextArea>
+                  <JFXTextField fx:id="tfUsername" focusColor="#405aa800" layoutX="107.0" layoutY="220.0" prefHeight="48.0" prefWidth="336.0" promptText="User Name" style="-fx-background-color: white; -fx-background-radius: 20px;" unFocusColor="#4d4d4d00">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding></JFXTextField>
+                  <JFXTextField fx:id="tfPassword" focusColor="#405aa800" layoutX="107.0" layoutY="280.0" prefHeight="48.0" prefWidth="336.0" promptText="Password" style="-fx-background-color: white; -fx-background-radius: 20px;" unFocusColor="#4d4d4d00">
+                     <font>
+                        <Font size="16.0" />
+                     </font></JFXTextField>
+                  <JFXPasswordField fx:id="pfPassword" focusColor="#405aa800" focusTraversable="false" layoutX="107.0" layoutY="280.0" prefHeight="48.0" prefWidth="336.0" promptText="Password" style="-fx-background-color: white; -fx-background-radius: 20px;" unFocusColor="#4d4d4d00">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </JFXPasswordField>
+                  <JFXCheckBox fx:id="cbShowPassword" focusTraversable="false" layoutX="107.0" layoutY="336.0" onAction="#cbShowPasswordOnAction" text="Show Password" />
+                  <ImageView layoutX="401.0" layoutY="232.0">
+                     <image>
+                        <Image url="@../img/person.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView layoutX="401.0" layoutY="293.0">
+                     <image>
+                        <Image url="@../img/key.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="TOP_CENTER" layoutX="97.0" layoutY="394.0" prefHeight="103.0" prefWidth="358.0">
+                     <children>
+                        <JFXButton fx:id="btnSignIn" focusTraversable="false" onAction="#btnSignInOnAction" prefHeight="54.0" prefWidth="177.0" style="-fx-background-color: #780F95; -fx-background-radius: 20px;" text="Sign In" textFill="WHITE">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <FlowPane alignment="CENTER" prefHeight="46.0" prefWidth="358.0">
+                           <children>
+                              <Label text="Don't have an account? ">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label onMouseClicked="#lblSignUpOnMouseClicked" text="Sign up" textFill="RED">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </VBox>
+                  <JFXTextArea fx:id="taSignUpDescription" editable="false" focusColor="#405aa800" focusTraversable="false" layoutX="159.0" layoutY="145.0" prefHeight="69.0" prefWidth="233.0" text="Please insert your information here to sign up!" unFocusColor="#4d4d4d00" visible="false">
+                     <cursor>
+                        <Cursor fx:constant="NONE" />
+                     </cursor>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextArea>
+                  <Pane layoutX="90.0" layoutY="96.0" prefHeight="117.0" prefWidth="392.0" />
+               </children></Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
