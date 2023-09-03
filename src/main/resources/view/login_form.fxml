@@ -86,7 +86,10 @@
                   <JFXTextField fx:id="tfPassword" focusColor="#405aa800" layoutX="107.0" layoutY="280.0" prefHeight="48.0" prefWidth="336.0" promptText="Password" style="-fx-background-color: white; -fx-background-radius: 20px;" unFocusColor="#4d4d4d00">
                      <font>
                         <Font size="16.0" />
-                     </font></JFXTextField>
+                     </font>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding></JFXTextField>
                   <JFXPasswordField fx:id="pfPassword" focusColor="#405aa800" focusTraversable="false" layoutX="107.0" layoutY="280.0" prefHeight="48.0" prefWidth="336.0" promptText="Password" style="-fx-background-color: white; -fx-background-radius: 20px;" unFocusColor="#4d4d4d00">
                      <font>
                         <Font size="16.0" />

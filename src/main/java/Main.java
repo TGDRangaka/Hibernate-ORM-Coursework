@@ -1,6 +1,7 @@
 import dao.DAOFactory;
 import dao.SuperDAO;
 import dao.custom.impl.UserDAOImpl;
+import entity.Room;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
