@@ -18,7 +18,7 @@ public class StudentDTO {
     private String contactNo;
     private LocalDate dob;
     private String gender;
-    private List<Reservation> reservations;
+    private List<ReservationDTO> reservations;
 
     public StudentDTO(){}
 }

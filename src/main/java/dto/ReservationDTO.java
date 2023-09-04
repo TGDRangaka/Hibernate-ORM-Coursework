@@ -12,8 +12,8 @@ public class ReservationDTO {
     private String id;
     private LocalDate date;
     private String status;
-    private Student student;
-    private Room room;
+    private StudentDTO student;
+    private RoomDTO room;
 
     public ReservationDTO(){}
 }

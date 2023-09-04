@@ -15,9 +15,9 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #1f1f1f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowFormController">
    <children>
-      <FlowPane alignment="CENTER_LEFT" prefHeight="69.0" prefWidth="1200.0" style="-fx-border-color: white; -fx-border-width: 0 0 5 0;" AnchorPane.topAnchor="0.0">
+      <FlowPane alignment="CENTER_LEFT" prefHeight="69.0" prefWidth="1200.0" style="-fx-border-color: gold; -fx-border-width: 0 0 5 0;" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXButton layoutX="20.0" layoutY="20.0" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: lightgreen; -fx-background-radius: 10px;" text="   User Name">
+            <JFXButton layoutX="20.0" layoutY="20.0" onAction="#btnUserOnAction" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: lightgreen; -fx-background-radius: 10px;" text="   User Name">
                <graphic>
                   <ImageView>
                      <image>
@@ -51,43 +51,71 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: white; -fx-border-width: 0 5 0 0;">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: gold; -fx-border-width: 0 5 0 0;">
                <children>
-                  <JFXButton prefHeight="130.0" prefWidth="250.0" style="-fx-background-color: lightblue; -fx-background-radius: 10px;" text="Room Reservataion">
+                  <JFXButton contentDisplay="BOTTOM" onAction="#btnRegistrationOnAction" prefHeight="130.0" prefWidth="250.0" stylesheets="@../css/button.css" text="Registration">
                      <font>
                         <Font size="25.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="30.0" top="30.0" />
                      </VBox.margin>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../img/reserve.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </JFXButton>
-                  <JFXButton layoutX="16.0" layoutY="115.0" prefHeight="130.0" prefWidth="250.0" style="-fx-background-color: lightblue; -fx-background-radius: 10px;" text="Student Manage">
+                  <JFXButton contentDisplay="BOTTOM" layoutX="16.0" layoutY="115.0" onAction="#btnStudentManageOnAction" prefHeight="130.0" prefWidth="250.0" stylesheets="@../css/button.css" text="Student Manage">
                      <font>
                         <Font size="25.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="30.0" top="30.0" />
                      </VBox.margin>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../img/student.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </JFXButton>
-                  <JFXButton layoutX="16.0" layoutY="305.0" prefHeight="130.0" prefWidth="250.0" style="-fx-background-color: lightblue; -fx-background-radius: 10px;" text="Room Manage">
+                  <JFXButton contentDisplay="BOTTOM" layoutX="16.0" layoutY="305.0" onAction="#btnRoomManageOnAction" prefHeight="130.0" prefWidth="250.0" stylesheets="@../css/button.css" text="Room Manage">
                      <font>
                         <Font size="25.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="30.0" top="30.0" />
                      </VBox.margin>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../img/room.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </JFXButton>
-                  <JFXButton layoutX="16.0" layoutY="400.0" prefHeight="130.0" prefWidth="250.0" style="-fx-background-color: lightblue; -fx-background-radius: 10px;" text="Find">
+                  <JFXButton contentDisplay="BOTTOM" layoutX="16.0" layoutY="400.0" onAction="#btnFindOnAction" prefHeight="130.0" prefWidth="250.0" stylesheets="@../css/button.css" text="Find   ">
                      <font>
                         <Font size="25.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="30.0" top="30.0" />
                      </VBox.margin>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../img/find_students.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </JFXButton>
                </children>
             </VBox>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #111111;" GridPane.columnIndex="1" />
+            <AnchorPane fx:id="root" prefHeight="720.0" prefWidth="933.0" style="-fx-background-color: #111111;" GridPane.columnIndex="1" />
          </children>
       </GridPane>
    </children>

@@ -1,5 +1,6 @@
 package entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -22,7 +23,16 @@ public class Student {
     private LocalDate dob;
     private String gender;
 
-    @OneToMany(mappedBy = "student")
+    public Student(String id, String name, String address, String contactNo, LocalDate dob, String gender) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.contactNo = contactNo;
+        this.dob = dob;
+        this.gender = gender;
+    }
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<Reservation> reservations;
 
     public Student(){}

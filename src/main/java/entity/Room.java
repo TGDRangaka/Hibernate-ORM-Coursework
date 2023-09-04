@@ -1,8 +1,6 @@
 package entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -18,7 +16,7 @@ public class Room {
     private Double keyMoney;
     private Integer qty;
 
-    @OneToMany(mappedBy = "room")
+    @OneToMany(mappedBy = "room", fetch = FetchType.EAGER)
     private List<Reservation> reservations;
 
     public Room(){}

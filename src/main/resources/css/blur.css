@@ -1,0 +1,23 @@
+/* Customize RadioButton Label Color */
+.radio-button .radio, .radio-button .text {
+    -fx-text-fill: #ffffff; /* White text */
+}
+
+/* Unselected RadioButton Circle Color */
+.radio-button .radio {
+    -fx-background-color: #1F1F1F; /* Dark background */
+    -fx-border-color: white; /* Dark border color */
+    -fx-border-radius: 50%;
+}
+
+/* Selected RadioButton Circle Color */
+.radio-button:selected .radio {
+    -fx-background-color: #15d5c7; /* Teal color for selected */
+    -fx-border-color: #38ef7d; /* Lighter border color for selected */
+}
+
+/* Mouse Hover Effect */
+.radio-button .radio:hover {
+    -fx-background-color: #38ef7d; /* Lighter teal on hover */
+    -fx-border-color: #15d5c7; /* Highlight border on hover */
+}

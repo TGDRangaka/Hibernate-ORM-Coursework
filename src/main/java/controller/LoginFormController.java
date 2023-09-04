@@ -99,7 +99,7 @@ public class LoginFormController implements Initializable {
 
     private void fieldsOnActions() {
         tfUsername.setOnAction((e)-> {
-            tfPassword.requestFocus();
+            pfPassword.requestFocus();
         });
 
         tfPassword.setOnAction((e) -> {

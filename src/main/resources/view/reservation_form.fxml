@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="933.0" style="-fx-background-color: #111111;" stylesheets="@../css/blur.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReservationFormController">
+   <children>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" text="Room Reservation" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <VBox fx:id="studentPane" layoutX="14.0" layoutY="72.0" prefHeight="635.0" prefWidth="369.0" style="-fx-border-color: grey; -fx-border-radius: 5px;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="70.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="343.0" text="Student Details" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Arial Bold" size="34.0" />
+               </font>
+            </Label>
+            <Label text="ID" textFill="#c9c9c9">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="tfStudentId" focusColor="#425ba600" prefHeight="33.0" prefWidth="345.0" style="-fx-background-color: white; -fx-background-radius: 5px;" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="25.0" layoutY="25.0" text="Name" textFill="#c9c9c9">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <JFXTextField fx:id="tfStudentName" focusColor="#425ba600" layoutX="25.0" layoutY="55.0" prefHeight="33.0" prefWidth="345.0" style="-fx-background-color: white; -fx-background-radius: 5px;" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="25.0" layoutY="99.0" text="Address" textFill="#c9c9c9">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <JFXTextField fx:id="tfStudentAddress" focusColor="#425ba600" layoutX="25.0" layoutY="129.0" prefHeight="33.0" prefWidth="345.0" style="-fx-background-color: white; -fx-background-radius: 5px;" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="25.0" layoutY="173.0" text="Contact No" textFill="#c9c9c9">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <JFXTextField fx:id="tfContactNo" focusColor="#425ba600" layoutX="25.0" layoutY="203.0" prefHeight="33.0" prefWidth="345.0" style="-fx-background-color: white; -fx-background-radius: 5px;" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="25.0" layoutY="337.0" text="Date Of Birth" textFill="#c9c9c9">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <DatePicker fx:id="dpDob" prefHeight="47.0" prefWidth="337.0" />
+            <FlowPane prefHeight="36.0" prefWidth="337.0" rowValignment="TOP">
+               <children>
+                  <RadioButton fx:id="rBtnMale" mnemonicParsing="false" onMouseClicked="#rBtnMaleOnMouseClicked" text="Male" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="rBtnFemale" layoutX="10.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#rBtnFemaleOnMouseClicked" text="Female" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <FlowPane.margin>
+                        <Insets left="10.0" />
+                     </FlowPane.margin>
+                  </RadioButton>
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </FlowPane>
+            <JFXButton fx:id="btnNext" onAction="#btnNextOnAction" prefHeight="46.0" prefWidth="352.0" style="-fx-background-color: #54B435; -fx-background-radius: 5px; -fx-border-color: white; -fx-border-radius: 5px;" text="Next">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </VBox>
+      <Pane fx:id="reservationPane" disable="true" layoutX="397.0" layoutY="70.0" prefHeight="635.0" prefWidth="524.0" style="-fx-border-color: grey; -fx-border-radius: 5px;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Res_ID:" textFill="#c9c9c9">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblResId" layoutX="100.0" layoutY="14.0" text="RS000" textFill="#7cff62">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="274.0" layoutY="14.0" text="Date:" textFill="#c9c9c9">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDate" layoutX="329.0" layoutY="14.0" text="YYYY/MM/DD" textFill="#7cff62">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cboxRoomType" layoutX="14.0" layoutY="321.0" prefHeight="44.0" prefWidth="249.0" style="-fx-background-color: white;" />
+            <TableView fx:id="tblRooms" layoutX="14.0" layoutY="54.0" prefHeight="204.0" prefWidth="495.0" stylesheets="@../css/table.css">
+              <columns>
+                <TableColumn fx:id="colRoomTypeId" prefWidth="94.0" text="Room Type ID" />
+                <TableColumn fx:id="colRoomType" prefWidth="163.0" text="Room Type" />
+                  <TableColumn fx:id="colKeyPrice" minWidth="0.0" prefWidth="128.0" text="Key Price" />
+                  <TableColumn fx:id="colAvailableRooms" prefWidth="108.0" text="Available Rooms" />
+              </columns>
+            </TableView>
+            <Label layoutX="14.0" layoutY="291.0" text="Select Room Type:" textFill="#c9c9c9">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <FlowPane alignment="CENTER_LEFT" layoutX="14.0" layoutY="459.0" prefHeight="49.0" prefWidth="313.0">
+               <children>
+                  <RadioButton fx:id="rBtnPayNow" mnemonicParsing="false" onMouseClicked="#rBtnPayNowOnMouseClicked" text="Pay Now" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="rBtnPayLater" layoutX="10.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#rBtnPayLaterOnMouseClicked" text="Pay Later" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <FlowPane.margin>
+                        <Insets left="30.0" />
+                     </FlowPane.margin>
+                  </RadioButton>
+               </children>
+            </FlowPane>
+            <Label layoutX="14.0" layoutY="419.0" text="Payment Method:" textFill="#c9c9c9">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="15.0" layoutY="575.0" onAction="#btnBackOnAction" prefHeight="46.0" prefWidth="237.0" style="-fx-background-color: #C147E9; -fx-background-radius: 5px; -fx-border-color: white; -fx-border-radius: 5px;" text="Back">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="270.0" layoutY="575.0" onAction="#btnRegisterOnAction" prefHeight="46.0" prefWidth="237.0" style="-fx-background-color: #54B435; -fx-background-radius: 5px; -fx-border-color: white; -fx-border-radius: 5px;" text="Register">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
