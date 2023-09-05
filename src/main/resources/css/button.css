@@ -2,7 +2,7 @@
     -fx-background-color: #606060; /* Set button background color */
     /*-fx-background-color: #00BFFF;*/
     -fx-background-radius: 20px;
-    -fx-text-fill: black; /* Set button text color */
+    -fx-text-fill: white; /* Set button text color */
     -fx-font-family: "Segoe UI Semibold";
     -fx-font-size: 20px; /* Set font size */
     /*-fx-padding: 10px 20px; !* Set padding *!*/

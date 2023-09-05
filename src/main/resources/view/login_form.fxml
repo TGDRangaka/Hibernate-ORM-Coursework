@@ -19,14 +19,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
    <children>
-      <Pane layoutX="20.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #cedce7 0%,#596a72 100%);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="20.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1f1f1f;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane layoutX="91.0" layoutY="114.0" opacity="0.68" prefHeight="450.0" prefWidth="461.0" style="-fx-background-color: black; -fx-background-radius: 20%;">
                <effect>
                   <GaussianBlur radius="34.22" />
                </effect>
             </Pane>
-            <Pane layoutX="64.0" layoutY="100.0" prefHeight="450.0" prefWidth="475.0" style="-fx-background-color: white; -fx-background-radius: 20%;">
+            <Pane layoutX="64.0" layoutY="100.0" prefHeight="450.0" prefWidth="475.0" style="-fx-background-color: white; -fx-border-color: linear-gradient(to right, #11998e, #38ef7d); -fx-border-radius: 18%; -fx-border-width: 5px; -fx-background-radius: 20%;">
                <children>
                   <Label layoutX="53.0" layoutY="54.0" text="Wellcome Back!">
                      <font>
@@ -61,7 +61,7 @@
                   <GaussianBlur radius="32.56" />
                </effect>
             </Pane>
-            <Pane layoutX="479.0" layoutY="50.0" prefHeight="550.0" prefWidth="550.0" style="-fx-background-color: linear-gradient(to right, #ffc578 0%,#fb9d23 100%); -fx-border-color: white; -fx-border-radius: 19%; -fx-border-width: 6; -fx-background-radius: 20%;">
+            <Pane layoutX="479.0" layoutY="50.0" prefHeight="550.0" prefWidth="550.0" style="-fx-background-color: linear-gradient(to right, #11998e, #38ef7d); -fx-border-color: white; -fx-border-radius: 19%; -fx-border-width: 6; -fx-background-radius: 20%;">
                <children>
                   <Label layoutX="225.0" layoutY="40.0" text="Login">
                      <font>

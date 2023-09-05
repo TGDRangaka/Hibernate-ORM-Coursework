@@ -85,7 +85,12 @@ public class LoginFormController implements Initializable {
         window.close();
 
         Stage stage = new Stage();
-        stage.setScene(new Scene(new FXMLLoader(getClass().getResource("/view/main_window_form.fxml")).load()));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/main_window_form.fxml"));
+        stage.setScene(new Scene(fxmlLoader.load()));
+
+        MainWindowFormController mainWindowFormController = fxmlLoader.getController();
+        mainWindowFormController.setUserName(tfUsername.getText());
+
         stage.setTitle("D24 Hostel System");
         stage.show();
     }

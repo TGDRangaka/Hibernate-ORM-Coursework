@@ -31,6 +31,7 @@ public class ReservationFormController implements Initializable {
 
     public VBox studentPane;
     public Pane reservationPane;
+    public Label lblKeyMoney;
     @FXML
     private JFXTextField tfStudentId;
 
@@ -162,13 +163,13 @@ public class ReservationFormController implements Initializable {
             return "non payed";
         }
     }
-    private String getRoomId(String roomType){
+    private RoomDTO getRoom(String roomType){
         try {
 
             List<RoomDTO> allRooms = registrationBO.getAllRooms();
             for (RoomDTO room : allRooms) {
                 if (roomType.equals(room.getType())){
-                    return room.getRoomTypeId();
+                    return room;
                 }
             }
 
@@ -179,7 +180,7 @@ public class ReservationFormController implements Initializable {
     }
 
     private boolean checkStudentValues() {
-        if (!tfStudentId.getText().matches("^S\\d{3}$")){
+        if (!tfStudentId.getText().matches("^S\\d{3}$") || tfStudentId.getText() == null){
             new Alert(Alert.AlertType.WARNING,"Please enter the valid ID").show();
             return false;
         }
@@ -216,7 +217,7 @@ public class ReservationFormController implements Initializable {
                         new ArrayList<>()
                 );
 
-                RoomDTO room = registrationBO.getRoom(getRoomId(cboxRoomType.getValue()));
+                RoomDTO room = getRoom(cboxRoomType.getValue());
 
                 ReservationDTO reservation = new ReservationDTO(
                         lblResId.getText(),
@@ -227,6 +228,7 @@ public class ReservationFormController implements Initializable {
                 );
 
                 student.getReservations().add(reservation);
+                room.setReservations(new ArrayList<>());
                 room.getReservations().add(reservation);
 
                 boolean isRegistered = registrationBO.registerStudent(reservation);
@@ -274,6 +276,11 @@ public class ReservationFormController implements Initializable {
         }
     }
 
+    @FXML
+    public void cboxRoomTypeOnAction(ActionEvent event) {
+        RoomDTO room = getRoom(cboxRoomType.getValue());
+        lblKeyMoney.setText("Rs: " + room.getKeyMoney());
+    }
     private void clearFields(){
         tfStudentId.setText(null);
         tfStudentName.setText(null);
@@ -294,4 +301,6 @@ public class ReservationFormController implements Initializable {
             e.printStackTrace();
         }
     }
+
+
 }
