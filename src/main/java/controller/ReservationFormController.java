@@ -116,6 +116,7 @@ public class ReservationFormController implements Initializable {
 
     private void loadRoomsTable() throws Exception {
         roomTMS = FXCollections.observableArrayList();
+        roomTypes = FXCollections.observableArrayList();
 
         List<RoomDTO> allRooms = registrationBO.getAllRooms();
 
@@ -196,9 +197,22 @@ public class ReservationFormController implements Initializable {
             new Alert(Alert.AlertType.WARNING,"Please enter the valid contact No").show();
             return false;
         }
+        if(!(rBtnFemale.isSelected() || rBtnMale.isSelected())){
+            new Alert(Alert.AlertType.WARNING,"Please select the gender").show();
+            return false;
+        }
         return true;
     }
     private boolean checkReservationValues(){
+        if(cboxRoomType.getValue() == null){
+            new Alert(Alert.AlertType.WARNING,"Please select the room type").show();
+            return false;
+        }
+        if(!(rBtnPayLater.isSelected() || rBtnPayNow.isSelected())){
+            new Alert(Alert.AlertType.WARNING,"Please select the payment method").show();
+            return false;
+        }
+
         return true;
     }
 
@@ -234,6 +248,7 @@ public class ReservationFormController implements Initializable {
                 boolean isRegistered = registrationBO.registerStudent(reservation);
                 if (isRegistered){
                     new Alert(Alert.AlertType.CONFIRMATION, "Registration Completed!").show();
+                    clearFields();
                 }else {
 
                     new Alert(Alert.AlertType.WARNING, "Registration Failed!!!").show();
@@ -244,8 +259,6 @@ public class ReservationFormController implements Initializable {
                 new Alert(Alert.AlertType.ERROR, "Oops..Something Went Wrong...").show();
             }
         }
-
-        clearFields();
     }
 
     @FXML
@@ -281,6 +294,7 @@ public class ReservationFormController implements Initializable {
         RoomDTO room = getRoom(cboxRoomType.getValue());
         lblKeyMoney.setText("Rs: " + room.getKeyMoney());
     }
+
     private void clearFields(){
         tfStudentId.setText(null);
         tfStudentName.setText(null);
@@ -293,6 +307,7 @@ public class ReservationFormController implements Initializable {
         rBtnPayLater.setSelected(false);
 
         dpDob.setValue(null);
+        lblKeyMoney.setText("");
 
         try {
             loadRoomsTable();

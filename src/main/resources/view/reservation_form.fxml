@@ -155,7 +155,7 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </padding>
       </VBox>
-      <Pane fx:id="reservationPane" layoutX="762.0" layoutY="70.0" prefHeight="735.0" prefWidth="756.0" style="-fx-border-color: rgba(255, 255, 255, 0.2); -fx-border-radius: 5px;" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="70.0">
+      <Pane fx:id="reservationPane" disable="true" layoutX="762.0" layoutY="70.0" prefHeight="735.0" prefWidth="756.0" style="-fx-border-color: rgba(255, 255, 255, 0.2); -fx-border-radius: 5px;" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="70.0">
          <children>
             <Label layoutX="14.0" layoutY="14.0" text="Res_ID:" textFill="#c9c9c9">
                <font>
