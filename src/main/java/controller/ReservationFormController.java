@@ -32,6 +32,7 @@ public class ReservationFormController implements Initializable {
     public VBox studentPane;
     public Pane reservationPane;
     public Label lblKeyMoney;
+    public RadioButton rBtnOther;
     @FXML
     private JFXTextField tfStudentId;
 
@@ -152,9 +153,11 @@ public class ReservationFormController implements Initializable {
 
     private String getGender() {
         if (rBtnMale.isSelected()){
-            return "male";
-        }else{
-            return "female";
+            return "Male";
+        }else if(rBtnFemale.isSelected()){
+            return "Female";
+        }else {
+            return "Other";
         }
     }
     private String getPayMethod(){
@@ -197,7 +200,7 @@ public class ReservationFormController implements Initializable {
             new Alert(Alert.AlertType.WARNING,"Please enter the valid contact No").show();
             return false;
         }
-        if(!(rBtnFemale.isSelected() || rBtnMale.isSelected())){
+        if(!(rBtnFemale.isSelected() || rBtnMale.isSelected() || rBtnOther.isSelected())){
             new Alert(Alert.AlertType.WARNING,"Please select the gender").show();
             return false;
         }
@@ -266,10 +269,25 @@ public class ReservationFormController implements Initializable {
         if (rBtnMale.isSelected()){
             rBtnMale.setSelected(false);
         }
+        if (rBtnOther.isSelected()){
+            rBtnOther.setSelected(false);
+        }
     }
 
     @FXML
     void rBtnMaleOnMouseClicked(MouseEvent event) {
+        if (rBtnFemale.isSelected()){
+            rBtnFemale.setSelected(false);
+        }
+        if (rBtnOther.isSelected()){
+            rBtnOther.setSelected(false);
+        }
+    }
+
+    public void rBtnOtherOnMouseClicked(MouseEvent mouseEvent) {
+        if (rBtnMale.isSelected()){
+            rBtnMale.setSelected(false);
+        }
         if (rBtnFemale.isSelected()){
             rBtnFemale.setSelected(false);
         }

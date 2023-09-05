@@ -2,6 +2,7 @@ package dao.custom.impl;
 
 import dao.custom.ReservationDAO;
 import entity.Reservation;
+import entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -102,5 +103,20 @@ public class ReservationDAOImpl implements ReservationDAO {
         session.close();
 
         return reservation;
+    }
+
+    @Override
+    public Reservation getReservationBySId(String sId) throws Exception {
+        Session session = HibernateFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query query = session.createQuery("from Reservation where studentId =?1");
+        query.setParameter(1, sId);
+        List<Reservation> list = query.list();
+
+        transaction.commit();
+        session.close();
+
+        return list.get(0);
     }
 }

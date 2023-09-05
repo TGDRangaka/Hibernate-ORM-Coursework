@@ -15,10 +15,13 @@ import javafx.stage.StageStyle;
 import lombok.SneakyThrows;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
+import org.hibernate.query.Query;
 import util.HibernateFactoryConfig;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main extends Application {
     @SneakyThrows
@@ -38,6 +41,7 @@ public class Main extends Application {
 
         transaction.commit();
         session.close();*/
+
         launch();
     }
 
@@ -59,20 +63,5 @@ public class Main extends Application {
         Transaction transaction = session.beginTransaction();
         transaction.commit();
         session.close();
-    }
-
-    public static void aaa(){
-        double cap = 21.01;
-        double interest = 0.07;
-        double profit = 0.00;
-
-        for (int i = 0; i < 15; i++) {
-            System.out.print("\nDay - " + (i+1) + "___ Capital : " + cap);
-            double income = cap * interest;
-            System.out.print("__Income : " + income);
-            profit+=income;
-            cap += income;
-            System.out.print("__Profit : " + profit);
-        }
     }
 }

@@ -58,17 +58,17 @@
 }
 
 .table-view .table-row-cell:selected .table-cell{
-    -fx-text-fill: #ffffff;
+    -fx-text-fill: #2eff5d;
 }
 
 .table-view .table-row-cell:odd{
-    -fx-background-color: rgba(136, 124, 220, 0.06);
+    -fx-background-color: rgba(244, 252, 240, 0.08);
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
 }
 
 .table-view .table-row-cell:even{
-    -fx-background-color: rgba(153, 145, 203, 0.06);
+    -fx-background-color: rgba(201, 201, 201, 0.06);
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
 }

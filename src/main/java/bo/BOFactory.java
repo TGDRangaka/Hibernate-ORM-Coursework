@@ -3,6 +3,7 @@ package bo;
 import bo.custom.impl.DashboardBOImpl;
 import bo.custom.impl.LoginBOImpl;
 import bo.custom.impl.RegistrationBOImpl;
+import bo.custom.impl.StudentManageBOImpl;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -14,7 +15,7 @@ public class BOFactory {
     }
 
     public enum BOTypes {
-        LOGIN, REGISTRATION, DASHBOARD;
+        LOGIN, REGISTRATION, DASHBOARD, STUDENT_MANAGE;
     }
 
     public SuperBO getBO(BOTypes type){
@@ -22,6 +23,7 @@ public class BOFactory {
             case LOGIN: return new LoginBOImpl();
             case REGISTRATION: return new RegistrationBOImpl();
             case DASHBOARD: return new DashboardBOImpl();
+            case STUDENT_MANAGE: return new StudentManageBOImpl();
             default: return null;
         }
     }

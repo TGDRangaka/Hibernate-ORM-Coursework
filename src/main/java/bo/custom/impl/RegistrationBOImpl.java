@@ -62,12 +62,12 @@ public class RegistrationBOImpl implements RegistrationBO {
         );
         student.getReservations().add(reservation);
         room.getReservations().add(reservation);
+        room.setQty(room.getQty() - 1);
 
 
         boolean isRegistered = studentDAO.add(student);
-
-        room.setQty(room.getQty() - 1);
         roomDAO.update(room);
+
 
         return isRegistered;
     }
