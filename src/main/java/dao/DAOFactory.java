@@ -1,9 +1,6 @@
 package dao;
 
-import dao.custom.impl.ReservationDAOImpl;
-import dao.custom.impl.RoomDAOImpl;
-import dao.custom.impl.StudentDAOImpl;
-import dao.custom.impl.UserDAOImpl;
+import dao.custom.impl.*;
 
 public class DAOFactory {
     public static DAOFactory daoFactory;
@@ -15,7 +12,7 @@ public class DAOFactory {
     }
 
     public enum DAOTypes{
-        USER, STUDENT, ROOM, RESERVATION;
+        USER, STUDENT, ROOM, RESERVATION, JOIN;
     }
 
     public SuperDAO getDAO(DAOTypes type){
@@ -24,6 +21,7 @@ public class DAOFactory {
             case STUDENT: return new StudentDAOImpl();
             case ROOM: return new RoomDAOImpl();
             case RESERVATION: return new ReservationDAOImpl();
+            case JOIN: return new JoinDAOImpl();
             default: return null;
         }
     }

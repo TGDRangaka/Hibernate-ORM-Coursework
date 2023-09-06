@@ -62,8 +62,8 @@ public class StudentManageBOImpl implements StudentManageBO {
     }
 
     @Override
-    public boolean updateStudent(StudentDTO dto) throws Exception {
-        return studentDAO.update(new Student(
+    public boolean updateStudent(StudentDTO dto, ReservationDTO reservation) throws Exception {
+        boolean isUpdated = studentDAO.update(new Student(
                 dto.getId(),
                 dto.getName(),
                 dto.getAddress(),
@@ -72,6 +72,14 @@ public class StudentManageBOImpl implements StudentManageBO {
                 dto.getGender(),
                 new ArrayList<>()
         ));
+
+        if (isUpdated){
+            Reservation res = reservationDAO.search(reservation.getId());
+            res.setStatus(reservation.getStatus());
+            reservationDAO.update(res);
+        }
+
+        return isUpdated;
     }
 
     @Override

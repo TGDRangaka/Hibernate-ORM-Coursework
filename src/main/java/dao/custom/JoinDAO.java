@@ -6,5 +6,5 @@ import entity.Student;
 import java.util.List;
 
 public interface JoinDAO extends SuperDAO {
-    public List<Student> nonPayedKeyMoneyStd() throws Exception;
+    public List<Object[]> nonPayedKeyMoneyStd() throws Exception;
 }

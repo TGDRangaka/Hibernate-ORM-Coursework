@@ -37,7 +37,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <JFXTextField fx:id="tfSearch" layoutX="494.0" layoutY="20.0" onAction="#btnSearchOnAction" prefHeight="47.0" prefWidth="792.0" promptText="Search by ID" style="-fx-background-color: white; -fx-background-radius: 25px;">
+      <JFXTextField fx:id="tfSearch" focusColor="#405aa800" layoutX="355.0" layoutY="19.0" onAction="#btnSearchOnAction" prefHeight="47.0" prefWidth="618.0" promptText="Search by ID" style="-fx-background-color: white; -fx-background-radius: 25px;" unFocusColor="#4d4d4d00">
          <padding>
             <Insets left="30.0" />
          </padding>
@@ -45,7 +45,7 @@
             <Font size="20.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="tfStudentId" layoutX="14.0" layoutY="123.0" prefHeight="47.0" prefWidth="278.0" style="-fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 10;">
+      <JFXTextField fx:id="tfStudentId" focusColor="#405aa803" layoutX="14.0" layoutY="123.0" prefHeight="47.0" prefWidth="278.0" style="-fx-text-fill: white; -fx-border-color: grey; -fx-border-radius: 10;" unFocusColor="#4d4d4d00">
          <font>
             <Font size="20.0" />
          </font>
@@ -55,7 +55,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfStudentName" layoutX="14.0" layoutY="233.0" prefHeight="47.0" prefWidth="278.0" style="-fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 10;">
+      <JFXTextField fx:id="tfStudentName" focusColor="#405aa803" layoutX="14.0" layoutY="233.0" prefHeight="47.0" prefWidth="278.0" style="-fx-text-fill: white; -fx-border-color: grey; -fx-border-radius: 10;" unFocusColor="#4d4d4d00">
          <font>
             <Font size="20.0" />
          </font>
@@ -65,43 +65,43 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfAddress" layoutX="387.0" layoutY="123.0" prefHeight="47.0" prefWidth="278.0" style="-fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 10;">
+      <JFXTextField fx:id="tfAddress" focusColor="#405aa803" layoutX="326.0" layoutY="123.0" prefHeight="47.0" prefWidth="278.0" style="-fx-text-fill: white; -fx-border-color: grey; -fx-border-radius: 10;" unFocusColor="#4d4d4d00">
          <font>
             <Font size="20.0" />
          </font>
       </JFXTextField>
-      <Label layoutX="387.0" layoutY="96.0" text="Address:" textFill="#b2b2b2">
+      <Label layoutX="326.0" layoutY="96.0" text="Address:" textFill="#b2b2b2">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfContactNo" layoutX="387.0" layoutY="233.0" prefHeight="47.0" prefWidth="278.0" style="-fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 10;">
+      <JFXTextField fx:id="tfContactNo" focusColor="#405aa803" layoutX="326.0" layoutY="233.0" prefHeight="47.0" prefWidth="278.0" style="-fx-text-fill: white; -fx-border-color: grey; -fx-border-radius: 10;" unFocusColor="#4d4d4d00">
          <font>
             <Font size="20.0" />
          </font>
       </JFXTextField>
-      <Label layoutX="387.0" layoutY="206.0" text="Contact No:" textFill="#b2b2b2">
+      <Label layoutX="326.0" layoutY="206.0" text="Contact No:" textFill="#b2b2b2">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="751.0" layoutY="96.0" text="Date of birth:" textFill="#b2b2b2">
+      <Label layoutX="643.0" layoutY="96.0" text="Date of birth:" textFill="#b2b2b2">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <DatePicker fx:id="dpDob" layoutX="751.0" layoutY="123.0" prefHeight="47.0" prefWidth="278.0" stylesheets="@../css/style.css" />
-      <JFXButton layoutX="1113.0" layoutY="125.0" onAction="#btnUpdateOnAction" prefHeight="44.0" prefWidth="139.0" style="-fx-background-color: lightgreen;" text="Update">
+      <DatePicker fx:id="dpDob" layoutX="643.0" layoutY="123.0" prefHeight="47.0" prefWidth="278.0" stylesheets="@../css/style.css" />
+      <JFXButton layoutX="1151.0" layoutY="125.0" onAction="#btnUpdateOnAction" prefHeight="44.0" prefWidth="139.0" style="-fx-background-color: linear-gradient(to right, #56ab2f, #a8e063);" text="Update">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="1113.0" layoutY="235.0" onAction="#btnRemoveOnAction" prefHeight="44.0" prefWidth="139.0" style="-fx-background-color: lightpink;" text="Remove">
+      <JFXButton layoutX="1151.0" layoutY="235.0" onAction="#btnRemoveOnAction" prefHeight="44.0" prefWidth="139.0" style="-fx-background-color: linear-gradient(to right, #ff416c, #ff4b2b);" text="Remove">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnSearch" contentDisplay="GRAPHIC_ONLY" layoutX="1209.0" layoutY="17.0" onAction="#btnSearchOnAction" prefHeight="30.0" prefWidth="26.0" style="-fx-background-radius: 50%;" text="Update">
+      <JFXButton fx:id="btnSearch" contentDisplay="GRAPHIC_ONLY" layoutX="899.0" layoutY="16.0" onAction="#btnSearchOnAction" prefHeight="30.0" prefWidth="26.0" style="-fx-background-radius: 50%;" text="Update">
          <font>
             <Font size="20.0" />
          </font>
@@ -113,24 +113,45 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <Label layoutX="751.0" layoutY="206.0" text="Gender:" textFill="#b2b2b2">
+      <Label alignment="TOP_LEFT" layoutX="643.0" layoutY="206.0" prefHeight="77.0" prefWidth="278.0" style="-fx-border-color: grey; -fx-border-radius: 5;" text="Gender:" textFill="#b2b2b2">
          <font>
             <Font size="20.0" />
          </font>
+         <padding>
+            <Insets left="8.0" />
+         </padding>
       </Label>
-      <JFXRadioButton fx:id="rBtnMale" layoutX="751.0" layoutY="253.0" onMouseClicked="#rBtnMaleOnMouseClicked" text="Male" textFill="WHITE">
+      <JFXRadioButton fx:id="rBtnMale" layoutX="650.0" layoutY="253.0" onMouseClicked="#rBtnMaleOnMouseClicked" text="Male" textFill="#309aff">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXRadioButton>
-      <JFXRadioButton fx:id="rBtnFemale" layoutX="843.0" layoutY="253.0" onMouseClicked="#rBtnFemaleOnMouseClicked" text="Female" textFill="WHITE">
+      <JFXRadioButton fx:id="rBtnFemale" layoutX="738.0" layoutY="253.0" onMouseClicked="#rBtnFemaleOnMouseClicked" text="Female" textFill="#309aff">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXRadioButton>
-      <JFXRadioButton fx:id="rBtnOther" layoutX="953.0" layoutY="249.0" onMouseClicked="#rBtnOtherOnMouseClicked" prefHeight="30.0" prefWidth="76.0" text="Other" textFill="WHITE">
+      <JFXRadioButton fx:id="rBtnOther" layoutX="842.0" layoutY="249.0" onMouseClicked="#rBtnOtherOnMouseClicked" prefHeight="30.0" prefWidth="76.0" text="Other" textFill="#309aff">
          <font>
             <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXRadioButton>
+      <Label alignment="TOP_LEFT" layoutX="962.0" layoutY="121.0" prefHeight="163.0" prefWidth="150.0" style="-fx-border-color: grey; -fx-border-radius: 5;" text="Key Money:" textFill="#b2b2b2">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+      <JFXRadioButton fx:id="rBtnPayed" layoutX="969.0" layoutY="178.0" onMouseClicked="#rBtnPayedOnMouseClicked" prefHeight="30.0" prefWidth="187.0" text="Payed" textFill="#00ff37">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="rBtnNonPayed" layoutX="969.0" layoutY="230.0" onMouseClicked="#rBtnNonPayedOnMouseClicked" prefHeight="30.0" prefWidth="157.0" text="Non Payed" textFill="#ff6e00">
+         <font>
+            <Font name="System Bold" size="20.0" />
          </font>
       </JFXRadioButton>
    </children>

@@ -27,6 +27,8 @@ import java.util.ResourceBundle;
 public class StudentManageFormController implements Initializable {
 
     public JFXRadioButton rBtnOther;
+    public JFXRadioButton rBtnPayed;
+    public JFXRadioButton rBtnNonPayed;
     @FXML
     private TableView<StudentTM> tblStudent;
 
@@ -93,6 +95,7 @@ public class StudentManageFormController implements Initializable {
 
     private String resId;
     private String roomTypeId;
+    private StudentTM selectedStudent;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -218,8 +221,9 @@ public class StudentManageFormController implements Initializable {
                 new ArrayList<>()
         );
 
+        ReservationDTO reservation = new ReservationDTO(selectedStudent.getResId(),null,getPayment(),null,null);
         try {
-            boolean isStudentUpdated = studentManageBO.updateStudent(student);
+            boolean isStudentUpdated = studentManageBO.updateStudent(student, reservation);
             if (isStudentUpdated){
                 new Alert(Alert.AlertType.CONFIRMATION, "Student Updated!").show();
                 clearFields();
@@ -236,6 +240,14 @@ public class StudentManageFormController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private String getPayment() {
+        if (rBtnPayed.isSelected()){
+            return "payed";
+        }
+
+        return "non payed";
     }
 
     @FXML
@@ -278,17 +290,18 @@ public class StudentManageFormController implements Initializable {
     }
 
     public void tblStudentOnMouseClicked(MouseEvent mouseEvent) {
-        StudentTM student = tblStudent.getSelectionModel().getSelectedItem();
+        selectedStudent = tblStudent.getSelectionModel().getSelectedItem();
 
-        tfStudentId.setText(student.getSId());
-        tfStudentName.setText(student.getSName());
-        tfAddress.setText(student.getAddress());
-        tfContactNo.setText(student.getContactNo());
-        dpDob.setValue(student.getDob());
-        setGender(student.getGender());
+        tfStudentId.setText(selectedStudent.getSId());
+        tfStudentName.setText(selectedStudent.getSName());
+        tfAddress.setText(selectedStudent.getAddress());
+        tfContactNo.setText(selectedStudent.getContactNo());
+        dpDob.setValue(selectedStudent.getDob());
+        setGender(selectedStudent.getGender());
+        setPayment(selectedStudent.getStatus());
 
-        resId = student.getResId();
-        roomTypeId = student.getRoomId();
+        resId = selectedStudent.getResId();
+        roomTypeId = selectedStudent.getRoomId();
     }
 
     private boolean checkStudentValues() {
@@ -312,6 +325,10 @@ public class StudentManageFormController implements Initializable {
             new Alert(Alert.AlertType.WARNING,"Please select the gender").show();
             return false;
         }
+        if(!(rBtnPayed.isSelected() || rBtnNonPayed.isSelected() )){
+            new Alert(Alert.AlertType.WARNING,"Please select the payment section").show();
+            return false;
+        }
         return true;
     }
 
@@ -329,6 +346,18 @@ public class StudentManageFormController implements Initializable {
         }
     }
 
+    private void setPayment(String payment){
+        rBtnPayed.setSelected(false);
+        rBtnNonPayed.setSelected(false);
+
+        if (payment.equals("payed")){
+            rBtnPayed.setSelected(true);
+        }else{
+            rBtnNonPayed.setSelected(true);
+        }
+
+    }
+
     private void clearFields(){
         tfStudentId.setText(null);
         tfStudentName.setText(null);
@@ -338,5 +367,17 @@ public class StudentManageFormController implements Initializable {
 
         setGender("male");
         rBtnMale.setSelected(false);
+    }
+
+    public void rBtnPayedOnMouseClicked(MouseEvent mouseEvent) {
+        if (rBtnNonPayed.isSelected()){
+            rBtnNonPayed.setSelected(false);
+        }
+    }
+
+    public void rBtnNonPayedOnMouseClicked(MouseEvent mouseEvent) {
+        if (rBtnPayed.isSelected()){
+            rBtnPayed.setSelected(false);
+        }
     }
 }

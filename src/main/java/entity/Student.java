@@ -3,6 +3,7 @@ package entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -33,4 +34,8 @@ public class Student {
     private List<Reservation> reservations;
 
     public Student(){}
+
+    public String toString(){
+        return id + "-" + name + "-" + address;
+    }
 }

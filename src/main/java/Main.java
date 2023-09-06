@@ -45,6 +45,8 @@ public class Main extends Application {
         transaction.commit();
         session.close();*/
 
+
+
         launch();
     }
 
