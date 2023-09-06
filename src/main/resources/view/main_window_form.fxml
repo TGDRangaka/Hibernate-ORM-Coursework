@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,6 +13,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -133,5 +138,65 @@
             <AnchorPane fx:id="root" prefHeight="820.0" prefWidth="1300.0" style="-fx-background-color: #1f1f1f;" GridPane.columnIndex="1" />
          </children>
       </GridPane>
+      <Pane fx:id="userPane" layoutX="-1.0" layoutY="-1.0" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: rgba(0, 0, 0, 0.7);" visible="false">
+         <children>
+            <Pane layoutX="523.0" layoutY="159.0" prefHeight="582.0" prefWidth="554.0" style="-fx-border-color: white; -fx-background-color: #1f1f1f; -fx-border-radius: 15;">
+               <children>
+                  <Label layoutX="132.0" layoutY="250.0" text="Password" textFill="#d7d7d7">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="tfUserName" focusColor="#405aa800" layoutX="127.0" layoutY="167.0" prefHeight="40.0" prefWidth="300.0" style="-fx-border-color: grey; -fx-border-radius: 5; -fx-text-fill: white;" unFocusColor="#4d4d4d00">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="132.0" layoutY="138.0" text="Username" textFill="#d7d7d7">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="tfPassword" focusColor="#405aa800" layoutX="127.0" layoutY="279.0" prefHeight="46.0" prefWidth="300.0" style="-fx-border-color: grey; -fx-border-radius: 5; -fx-text-fill: white;" unFocusColor="#4d4d4d00">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="pfPassword" focusColor="#405aa800" layoutX="127.0" layoutY="279.0" prefHeight="46.0" prefWidth="300.0" style="-fx-border-color: grey; -fx-background-color: #1f1f1f; -fx-border-radius: 5; -fx-text-fill: white;" unFocusColor="#4d4d4d00">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <Button fx:id="btnEye" contentDisplay="GRAPHIC_ONLY" layoutX="381.0" layoutY="279.0" mnemonicParsing="false" onAction="#btnEyeOnAction" prefHeight="46.0" prefWidth="46.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fx:id="imgEye">
+                           <image>
+                              <Image url="@../img/eye_open.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <JFXButton layoutX="127.0" layoutY="399.0" onAction="#btnUpdateOnAction" prefHeight="46.0" prefWidth="124.0" style="-fx-background-color: linear-gradient(to right, #2193b0, #6dd5ed);" text="Update">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="303.0" layoutY="399.0" onAction="#btnCancelOnAction" prefHeight="46.0" prefWidth="124.0" style="-fx-background-color: linear-gradient(to right, #f2994a, #f2c94c);" text="Cancel">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="137.0" layoutY="14.0" text="User Details" textFill="#dddddd">
+                     <font>
+                        <Font name="System Bold" size="50.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

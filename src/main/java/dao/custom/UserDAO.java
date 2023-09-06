@@ -5,4 +5,5 @@ import entity.User;
 
 public interface UserDAO extends CrudDAO<User> {
     public boolean verifyUser(String username, String password) throws Exception;
+    public User search(String username, String password) throws Exception;
 }

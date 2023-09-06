@@ -12,7 +12,7 @@ public class BOFactory {
     }
 
     public enum BOTypes {
-        LOGIN, REGISTRATION, DASHBOARD, STUDENT_MANAGE, ROOM_MANAGE, FIND;
+        LOGIN, REGISTRATION, DASHBOARD, STUDENT_MANAGE, ROOM_MANAGE, FIND, MAIN;
     }
 
     public SuperBO getBO(BOTypes type){
@@ -23,6 +23,7 @@ public class BOFactory {
             case STUDENT_MANAGE: return new StudentManageBOImpl();
             case ROOM_MANAGE: return new RoomManageBOImpl();
             case FIND: return new FindBOImpl();
+            case MAIN: return new MainBOImpl();
             default: return null;
         }
     }

@@ -114,4 +114,20 @@ public class UserDAOImpl implements UserDAO {
         for (Object o : list) {return true;}
         return false;
     }
+
+    @Override
+    public User search(String username, String password) throws Exception {
+        Session session = HibernateFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query query = session.createQuery("from User where username =?1 and password =?2");
+        query.setParameter(1, username);
+        query.setParameter(2, password);
+        List<User> list = query.list();
+
+        transaction.commit();
+        session.close();
+
+        return list.get(0);
+    }
 }
