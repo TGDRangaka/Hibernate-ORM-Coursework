@@ -1,11 +1,15 @@
 package dao.custom.impl;
 
 import dao.custom.RoomDAO;
+import entity.Reservation;
 import entity.Room;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 import util.HibernateFactoryConfig;
+import util.NewId;
+
 import java.util.List;
 
 public class RoomDAOImpl implements RoomDAO {
@@ -60,7 +64,22 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public String generateNewID() throws Exception {
-        return null;
+        String id = "RM-001";
+
+        if (exist(id)) {
+            Session session = HibernateFactoryConfig.getInstance().getSession();
+            Transaction transaction = session.beginTransaction();
+
+            Query query = session.createQuery("from Room order by id desc limit 1");
+            List<Room> list = query.list();
+            id = list.get(0).getRoomTypeId();
+
+            transaction.commit();
+            session.close();
+            return NewId.getNewId(id);
+        }
+
+        return id;
     }
 
     @Override
@@ -86,5 +105,20 @@ public class RoomDAOImpl implements RoomDAO {
         session.close();
 
         return room;
+    }
+
+    @Override
+    public Integer getTotQtyOfRooms(String roomTypeId) throws Exception {
+        Session session = HibernateFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        NativeQuery nativeQuery = session.createNativeQuery("SELECT COUNT(*) FROM reservation WHERE room_roomTypeId = ?1");
+        nativeQuery.setParameter(1, roomTypeId);
+        Long result = (Long) nativeQuery.uniqueResult();
+
+        transaction.commit();
+        session.close();
+
+        return Math.toIntExact(result);
     }
 }

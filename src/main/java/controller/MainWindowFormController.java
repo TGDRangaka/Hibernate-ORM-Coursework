@@ -74,7 +74,7 @@ public class MainWindowFormController implements Initializable {
     @FXML
     void btnRoomManageOnAction(ActionEvent event) {
         try {
-            Node node = FXMLLoader.load(getClass().getResource("/view/reservation_form.fxml"));
+            Node node = FXMLLoader.load(getClass().getResource("/view/room_manage_form.fxml"));
             root.getChildren().setAll(node);
         } catch (IOException e) {
             e.printStackTrace();

@@ -8,12 +8,11 @@ import com.jfoenix.controls.JFXTextField;
 import dto.ReservationDTO;
 import dto.RoomDTO;
 import dto.StudentDTO;
-import dto.tm.RoomTM;
+import dto.tm.RoomTypesTM;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -67,7 +66,7 @@ public class ReservationFormController implements Initializable {
     private JFXComboBox<String> cboxRoomType;
 
     @FXML
-    private TableView<RoomTM> tblRooms;
+    private TableView<RoomTypesTM> tblRooms;
 
     @FXML
     private TableColumn<?, ?> colRoomTypeId;
@@ -89,7 +88,7 @@ public class ReservationFormController implements Initializable {
 
     private RegistrationBO registrationBO;
 
-    private ObservableList<RoomTM> roomTMS = FXCollections.observableArrayList();
+    private ObservableList<RoomTypesTM> roomTMS = FXCollections.observableArrayList();
     private ObservableList<String> roomTypes = FXCollections.observableArrayList();
 
     @Override
@@ -122,7 +121,7 @@ public class ReservationFormController implements Initializable {
         List<RoomDTO> allRooms = registrationBO.getAllRooms();
 
         for (RoomDTO room : allRooms) {
-            roomTMS.add(new RoomTM(room.getRoomTypeId(), room.getType(), room.getKeyMoney(), room.getQty()));
+            roomTMS.add(new RoomTypesTM(room.getRoomTypeId(), room.getType(), room.getKeyMoney(), room.getQty()));
 
             if (room.getQty() > 0){
                 roomTypes.add(room.getType());

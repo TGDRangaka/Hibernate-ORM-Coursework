@@ -1,18 +1,17 @@
 package dto.tm;
 
-import entity.Reservation;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.util.List;
 
 @Data
 @AllArgsConstructor
 public class RoomTM {
     private String roomTypeId;
-    private String type;
+    private String roomType;
     private Double keyMoney;
-    private Integer qty;
+    private Integer totQty;
+    private Integer availableRooms;
+    private Integer reservedRooms;
 
     public RoomTM(){}
 }
