@@ -16,7 +16,7 @@ public class Room {
     private Double keyMoney;
     private Integer qty;
 
-    @OneToMany(mappedBy = "room", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
     private List<Reservation> reservations;
 
     public Room(){}

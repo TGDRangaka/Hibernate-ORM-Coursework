@@ -86,12 +86,6 @@ public class ReservationDAOImpl implements ReservationDAO {
     }
 
     @Override
-    public boolean delete(String id, Session session) throws Exception {
-        session.remove(session.get(Reservation.class, id));
-        return true;
-    }
-
-    @Override
     public Reservation search(String id) throws Exception {
         Session session = HibernateFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();

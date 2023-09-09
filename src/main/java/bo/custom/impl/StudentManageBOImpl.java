@@ -91,8 +91,8 @@ public class StudentManageBOImpl implements StudentManageBO {
             session = HibernateFactoryConfig.getInstance().getSession();
             transaction = session.beginTransaction();
 
-            reservationDAO.delete(resId, session);
             studentDAO.delete(sId, session);
+            System.out.println(roomType);
             roomDAO.setRoomQty(1, roomType, session);
 
             transaction.commit();

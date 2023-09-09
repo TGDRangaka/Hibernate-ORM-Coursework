@@ -85,6 +85,14 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
+    public boolean add(Student student, Session session) throws Exception {
+
+        session.persist(student);
+
+        return true;
+    }
+
+    @Override
     public boolean delete(String id, Session session) throws Exception {
 
         session.remove(session.get(Student.class, id));

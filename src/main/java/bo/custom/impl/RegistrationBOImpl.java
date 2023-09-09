@@ -11,6 +11,9 @@ import dto.StudentDTO;
 import entity.Reservation;
 import entity.Room;
 import entity.Student;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import util.HibernateFactoryConfig;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,15 +64,30 @@ public class RegistrationBOImpl implements RegistrationBO {
                 room
         );
         student.getReservations().add(reservation);
-        room.getReservations().add(reservation);
-        room.setQty(room.getQty() - 1);
 
 
-        boolean isRegistered = studentDAO.add(student);
-        roomDAO.update(room);
+        Session session = null;
+        Transaction transaction = null;
+        try {
+            session = HibernateFactoryConfig.getInstance().getSession();
+            transaction = session.beginTransaction();
 
+            studentDAO.add(student, session);
+            System.out.println("student------------------");
+            System.out.println(room.getRoomTypeId());
+            roomDAO.setRoomQty(-1 ,room.getType(), session);
+            System.out.println("room------------");
 
-        return isRegistered;
+            transaction.commit();
+            return true;
+        }catch (Exception e){
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        }finally {
+            session.close();
+        }
+
     }
 
     @Override
