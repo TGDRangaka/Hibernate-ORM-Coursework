@@ -63,6 +63,10 @@ public class StudentManageBOImpl implements StudentManageBO {
 
     @Override
     public boolean updateStudent(StudentDTO dto, ReservationDTO reservation) throws Exception {
+        Reservation res = reservationDAO.search(reservation.getId());
+        res.setStatus(reservation.getStatus());
+        List<Reservation> list = new ArrayList<>();
+        list.add(res);
         boolean isUpdated = studentDAO.update(new Student(
                 dto.getId(),
                 dto.getName(),
@@ -70,14 +74,8 @@ public class StudentManageBOImpl implements StudentManageBO {
                 dto.getContactNo(),
                 dto.getDob(),
                 dto.getGender(),
-                new ArrayList<>()
+                list
         ));
-
-        if (isUpdated){
-            Reservation res = reservationDAO.search(reservation.getId());
-            res.setStatus(reservation.getStatus());
-            reservationDAO.update(res);
-        }
 
         return isUpdated;
     }
@@ -93,8 +91,8 @@ public class StudentManageBOImpl implements StudentManageBO {
 
             System.out.println("remove ---------------------------1");
 
-            session.remove(session.get(Reservation.class, resId));
-            session.remove(session.get(Student.class, sId));
+            reservationDAO.delete(resId, session);
+            studentDAO.delete(sId, session);
 
             Query query = session.createQuery("from Room where type=?1");
             query.setParameter(1, roomType);

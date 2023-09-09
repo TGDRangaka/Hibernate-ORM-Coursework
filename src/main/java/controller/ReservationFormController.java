@@ -101,10 +101,26 @@ public class ReservationFormController implements Initializable {
             lblResId.setText(registrationBO.getNewReservationId());
             setCellvalueFactories();
             loadRoomsTable();
+            setFieldsOnAction();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void setFieldsOnAction() {
+        tfStudentId.setOnAction((e) -> {
+            tfStudentName.requestFocus();
+        });
+        tfStudentName.setOnAction((e) -> {
+            tfStudentAddress.requestFocus();
+        });
+        tfStudentAddress.setOnAction((e) -> {
+            tfContactNo.requestFocus();
+        });
+        tfContactNo.setOnAction((e) -> {
+            dpDob.requestFocus();
+        });
     }
 
     private void setCellvalueFactories() {

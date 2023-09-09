@@ -82,13 +82,12 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public boolean delete(String id) throws Exception {
-        Session session = HibernateFactoryConfig.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
+        return false;
+    }
 
+    @Override
+    public boolean delete(String id, Session session) throws Exception {
         session.remove(session.get(Reservation.class, id));
-
-        transaction.commit();
-        session.close();
         return true;
     }
 

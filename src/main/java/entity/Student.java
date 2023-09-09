@@ -21,6 +21,12 @@ public class Student {
     private LocalDate dob;
     private String gender;
 
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Reservation> reservations;
+
+
+    public Student(){}
     public Student(String id, String name, String address, String contactNo, LocalDate dob, String gender) {
         this.id = id;
         this.name = name;
@@ -29,12 +35,6 @@ public class Student {
         this.dob = dob;
         this.gender = gender;
     }
-
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Reservation> reservations;
-
-    public Student(){}
-
     public String toString(){
         return id + "-" + name + "-" + address;
     }

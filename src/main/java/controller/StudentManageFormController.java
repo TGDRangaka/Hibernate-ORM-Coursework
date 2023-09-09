@@ -105,7 +105,22 @@ public class StudentManageFormController implements Initializable {
             e.printStackTrace();
         }
         loadCellValueFactories();
+        setFieldsOnAction();
+    }
 
+    private void setFieldsOnAction() {
+        tfStudentId.setOnAction((e)-> {
+            tfStudentName.requestFocus();
+        });
+        tfStudentName.setOnAction((e) -> {
+            tfAddress.requestFocus();
+        });
+        tfAddress.setOnAction((e) -> {
+            tfContactNo.requestFocus();
+        });
+        tfContactNo.setOnAction((e) -> {
+            dpDob.requestFocus();
+        });
     }
 
     private void loadStudentTable() throws Exception {

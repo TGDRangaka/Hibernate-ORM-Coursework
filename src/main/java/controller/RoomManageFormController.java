@@ -75,6 +75,17 @@ public class RoomManageFormController implements Initializable {
             e.printStackTrace();
         }
         loadCellValueFactories();
+        setFieldsOnAction();
+    }
+
+    private void setFieldsOnAction() {
+        tfRoomType.setOnAction((e) -> {
+            tfKeyMoney.requestFocus();
+        });
+        tfKeyMoney.setOnAction((e) -> {
+            tfRoomType.requestFocus();
+        });
+
     }
 
     private void loadRoomstable() throws Exception {
