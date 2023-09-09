@@ -3,6 +3,7 @@ package bo.custom.impl;
 import bo.custom.StudentManageBO;
 import dao.DAOFactory;
 import dao.custom.ReservationDAO;
+import dao.custom.RoomDAO;
 import dao.custom.StudentDAO;
 import dto.ReservationDTO;
 import dto.RoomDTO;
@@ -21,6 +22,7 @@ import java.util.List;
 public class StudentManageBOImpl implements StudentManageBO {
     private StudentDAO studentDAO = (StudentDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.STUDENT);
     private ReservationDAO reservationDAO = (ReservationDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.RESERVATION);
+    private RoomDAO roomDAO = (RoomDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.ROOM);
 
     @Override
     public List<ReservationDTO> getAllStudents() throws Exception {
@@ -89,21 +91,11 @@ public class StudentManageBOImpl implements StudentManageBO {
             session = HibernateFactoryConfig.getInstance().getSession();
             transaction = session.beginTransaction();
 
-            System.out.println("remove ---------------------------1");
-
             reservationDAO.delete(resId, session);
             studentDAO.delete(sId, session);
-
-            Query query = session.createQuery("from Room where type=?1");
-            query.setParameter(1, roomType);
-            List<Room> list = query.list();
-            Room room = list.get(0);
-            room.setQty(room.getQty() + 1);
-            session.update(room);
+            roomDAO.setRoomQty(1, roomType, session);
 
             transaction.commit();
-
-            System.out.println("remove ---------------------------2");
 
             return true;
         }catch (Exception e){

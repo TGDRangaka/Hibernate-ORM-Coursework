@@ -121,4 +121,16 @@ public class RoomDAOImpl implements RoomDAO {
 
         return Math.toIntExact(result);
     }
+
+    @Override
+    public boolean setRoomQty(Integer count, String roomId, Session session) throws Exception {
+        Query query = session.createQuery("from Room where type=?1");
+        query.setParameter(1, roomId);
+        List<Room> list = query.list();
+        Room room = list.get(0);
+        room.setQty(room.getQty() + count);
+        session.update(room);
+
+        return true;
+    }
 }
